@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i = 0;
+    printf("Enter string: ");
+    fgets(str, sizeof(str), stdin);
+    while (str[i] != '\0') {
+        if (str[i] == '\n') {
+            str[i] = '\0';
+            break;
+        }
+        i++;
+    }
+    i = 0;
+    while (str[i] != '\0') {
+        if (str[i] == 'a' || str[i] == 'A' ||
+            str[i] == 'e' || str[i] == 'E' ||
+            str[i] == 'i' || str[i] == 'I' ||
+            str[i] == 'o' || str[i] == 'O' ||
+            str[i] == 'u' || str[i] == 'U') {
+            str[i] = ' ';
+        }
+        i++;
+    }
+    printf("%s\n", str);
+    return 0;
+}
+
